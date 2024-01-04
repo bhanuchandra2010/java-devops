@@ -3,26 +3,21 @@ package com.freelance.demo.controller;
 import com.freelance.demo.models.LoginRequest;
 import com.freelance.demo.models.LoginResponse;
 import com.freelance.demo.services.UserService;
-import jdk.jfr.ContentType;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import reactor.core.publisher.Mono;
 
 @RestController
+@RequestMapping("/user")
 public class UserController {
 
 
+    @Autowired
     UserService userService;
-
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
-
 
     @ResponseBody
     @ResponseStatus(HttpStatus.CREATED)
