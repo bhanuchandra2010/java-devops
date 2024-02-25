@@ -1,2 +1,6 @@
+#Intellij default directory
 /.idea/
 /target/
+
+#Google Auth token
+/tokens/
